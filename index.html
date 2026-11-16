@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!-- FITYESZ V3 BETA. UNSTABLE. CURRENT STABLE VER: HTTPS://FITYESZ.HU // V3 BETA UPDATED: 2026. 11. 16. -->
+<html lang="hu" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fityesz V3 BÉTA</title>
+<link rel="icon" type="image/png" href="https://static.fityesz.hu/images/assets/fityesz.png"><meta property="og:image" content="https://static.fityesz.hu/images/assets/fityesz-megfizetnek.png">
+<style>
+:root{--bg:#07080d;--card:#10131c;--c2:#181c29;--tx:#f1f3fa;--mu:#8e97b0;--ac:#ff4d1c;--ac2:#ffc21a;--ok:#22d3b6;--bad:#ff3b5c;--bd:#232940}
+[data-theme=light]{--bg:#f5f6fb;--card:#fff;--c2:#eceef7;--tx:#10131c;--mu:#566079;--bd:#d6dae8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,Segoe UI,Roboto,sans-serif;overflow-x:hidden}
+a{color:var(--ac2)}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--ac),var(--ac2));z-index:50}
+.blob{position:fixed;border-radius:50%;filter:blur(90px);opacity:.25;z-index:-1;animation:fl 18s ease-in-out infinite alternate}
+.b1{width:500px;height:500px;background:var(--ac);top:-120px;left:-120px}.b2{width:420px;height:420px;background:#6d28d9;bottom:-100px;right:-80px;animation-delay:-8s}
+@keyframes fl{to{transform:translate(120px,80px) scale(1.2)}}
+header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd)}
+nav{max-width:1200px;margin:auto;display:flex;gap:4px;align-items:center;padding:8px 16px;flex-wrap:wrap}
+.logo{font-weight:900;font-size:21px;margin-right:auto;letter-spacing:1px;display:flex;align-items:center}.logo b{color:var(--ac)}
+.nlogo{height:36px;width:auto;margin-right:8px}
+.beta{font-size:10px;background:var(--ac);color:#fff;border-radius:6px;padding:2px 6px;margin-left:6px;animation:pl 2s infinite}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(255,77,28,.6)}70%,100%{box-shadow:0 0 0 8px rgba(255,77,28,0)}}
+nav a.l{color:var(--tx);text-decoration:none;padding:6px 11px;border-radius:8px;font-size:14px;transition:.2s}nav a.l:hover,nav a.l.on{background:var(--ac);color:#fff}
+button,.btn{cursor:pointer;border:1px solid var(--bd);background:var(--c2);color:var(--tx);border-radius:10px;padding:8px 14px;font:inherit;text-decoration:none;display:inline-block;transition:transform .2s,background .2s}
+button:hover,.btn:hover{transform:translateY(-2px)}.btn.p{background:var(--ac);border-color:var(--ac);color:#fff;font-weight:700}
+.tick{overflow:hidden;background:var(--ac);color:#fff;font-weight:700;font-size:13px;white-space:nowrap}
+.tick div{display:inline-block;padding:6px 0;animation:mq 70s linear infinite}.tick span{margin:0 28px}
+@keyframes mq{to{transform:translateX(-50%)}}
+main{max-width:1200px;margin:auto;padding:0 16px}
+.hero{min-height:78vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:50px 0}
+.herologo{width:min(320px,64vw);height:auto;filter:drop-shadow(0 10px 40px rgba(255,77,28,.45));animation:fy 5s ease-in-out infinite}@keyframes fy{50%{transform:translateY(-10px)}}
+.wm{font-size:clamp(48px,12vw,110px);font-weight:900;color:var(--ac)}
+.hero h1{margin:0;font-weight:900}.tag1{font-size:clamp(26px,5vw,52px);letter-spacing:-1px;margin-top:24px!important}.tag2{font-size:clamp(20px,4.2vw,42px);letter-spacing:-1px;color:var(--ac);margin-top:6px!important;min-height:1.3em}
+.hero p{max-width:720px;color:var(--mu);font-size:19px;margin:18px 0 24px}
+.cur{display:inline-block;width:3px;height:.9em;background:var(--ac);margin-left:4px;animation:bl 1s steps(2) infinite;vertical-align:middle}@keyframes bl{50%{opacity:0}}
+section{padding:50px 0}h2{font-size:clamp(28px,5vw,44px);margin:0 0 6px;letter-spacing:-1px}.sub{color:var(--mu);margin:0 0 24px}
+.grid{display:grid;gap:16px}.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.g3{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:20px;transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{border-color:var(--ac);box-shadow:0 12px 40px -18px var(--ac)}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+.stat b{display:block;font-size:42px;color:var(--ac);line-height:1.1;font-variant-numeric:tabular-nums}.stat span{color:var(--mu);font-size:14px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.tools input{flex:1;min-width:220px;background:var(--card);border:1px solid var(--bd);color:var(--tx);border-radius:10px;padding:10px 14px;font:inherit}
+.chip.on{background:var(--ac);border-color:var(--ac);color:#fff}
+.case{border-left:5px solid var(--mu);animation:pop .4s both}@keyframes pop{from{opacity:0;transform:scale(.96)}}
+.case.KRITIKUS{border-left-color:var(--bad)}.case.SÚLYOS{border-left-color:var(--ac)}.case.KÖZEPES{border-left-color:var(--ac2)}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:99px;background:var(--c2);color:var(--mu);margin-right:4px}
+.case h3,.card h3{margin:8px 0 4px}.case p{margin:6px 0;font-size:15px}
+.st{font-size:13px;background:var(--c2);border-radius:10px;padding:9px 11px;margin-top:8px}.st b{color:var(--ok)}.fsz{font-size:12px;color:var(--mu);margin-top:6px}
+.sit{display:flex;gap:14px}.sit .ic{font-size:30px}.sit h3{margin:0 0 4px}.sit p{margin:0;color:var(--mu);font-size:15px}
+.soc{height:42px;width:auto;display:block;margin-bottom:8px}.flogo{width:200px;height:auto;margin-bottom:10px}
+.arch{display:flex;flex-direction:column;gap:8px;margin-top:12px}.arch .btn{text-align:left;width:100%}.arch small{display:block;color:var(--mu);font-weight:400}
+.btn.p small{color:#ffe3d6}
+.feed .it{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--bd)}
+.feed time{color:var(--ac2);font-weight:700;font-size:13px}.feed h4{margin:0 0 4px;font-size:17px}.feed p{margin:0;color:var(--mu);font-size:14px}.feed .rel{font-size:12px;color:var(--ok)}
+.tl{border-left:2px solid var(--bd);margin-left:8px;padding-left:22px}.tl .it{margin:0 0 20px;position:relative}.tl .it:before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--ac);animation:pl 2.5s infinite}
+.tl time{font-size:12px;color:var(--ac2);font-weight:700}
+.bars .row{display:flex;align-items:center;gap:10px;margin:8px 0;font-size:14px}.bars .lab{width:130px;color:var(--mu)}.bars .tr{flex:1;background:var(--c2);border-radius:8px;height:14px;overflow:hidden}
+.bars .bar{height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,var(--ac),var(--ac2));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.note{background:rgba(255,194,26,.08);border:1px dashed var(--ac2);border-radius:12px;padding:12px 14px;font-size:14px}
+footer{border-top:1px solid var(--bd);margin-top:50px;padding:34px 16px;color:var(--mu);font-size:13px;text-align:center}
+#toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--bd);padding:10px 16px;border-radius:12px;display:none;z-index:60}
+@media(max-width:640px){.feed .it{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style></head><body>
+<div id="prog"></div><div class="blob b1"></div><div class="blob b2"></div>
+<header><nav><div class="logo"><img class="nlogo" src="https://static.fityesz.hu/images/assets/fityesz.png" alt="" onerror="this.remove()">FI<b>TY</b>ESZ<span class="beta">V3 BÉTA</span></div>
+<a class="l" href="#helyzet">Helyzet</a><a class="l" href="#ugyek">Ügyek</a><a class="l" href="#gyermek">Gyermekvédelem</a><a class="l" href="#idovonal">Idővonal</a><a class="l" href="#hirek">Hírportál</a><a class="l" href="#archivum">Archívum</a><button id="tg">🌗</button></nav>
+<div class="tick"><div id="tk"></div></div></header>
+<main>
+<div class="hero"><img class="herologo" src="https://static.fityesz.hu/images/assets/fityesz.png" alt="Fityesz logó" onerror="this.outerHTML='<div class=wm>FITYESZ</div>'">
+<h1 class="tag1">A Fidesz egy párt neve volt.</h1>
+<h1 class="tag2"><span id="typ"></span><span class="cur"></span></h1>
+<p>Fityesz Mozgalom: ügynyilvántartás, gyermekvédelmi hírfolyam, idővonal, hírportál és archívum egyetlen oldalon.</p>
+<div><a class="btn p" href="#ugyek">Ügyek böngészése</a> <a class="btn" href="#gyermek">Gyermekvédelmi hírfolyam</a> <a class="btn" href="#archivum">Archívum</a></div></div>
+
+<section><div class="grid g4" id="stats"></div></section>
+
+<section id="helyzet"><h2 class="rv">Hol tartunk most?</h2><p class="sub rv">A kormányváltás óta eltelt hónapok főbb fejleményei.</p>
+<div class="grid g3">
+<div class="card sit rv"><div class="ic">🏛️</div><div><h3>Kormányváltás</h3><p>2026 áprilisában a Tisza Párt kétharmados többséget szerzett. Magyar Péter lett a miniszterelnök, a Fidesz–KDNP 52 mandátummal ellenzékbe került.</p></div></div>
+<div class="card sit rv"><div class="ic">🔍</div><div><h3>Vagyonvisszaszerzés</h3><p>Új hivatal (NVVH) követi a közvagyon útját, első látványos eredményei az MNB- és a Seszták-ügyben jöttek.</p></div></div>
+<div class="card sit rv"><div class="ic">⚖️</div><div><h3>Őrizetek, letartóztatások</h3><p>Matolcsy György, Hankó Balázs és mások ellen eljárás folyik. Az ártatlanság vélelme mindenkit megillet.</p></div></div>
+<div class="card sit rv"><div class="ic">📜</div><div><h3>Vizsgálóbizottságok</h3><p>Működik a kegyelmi és a végrehajtási visszaéléseket vizsgáló bizottság. Orbán meghallgatását eddig elvetették.</p></div></div>
+<div class="card sit rv"><div class="ic">🗳️</div><div><h3>Orbán a Fidesz élén</h3><p>Orbán Viktor maradt a párt elnöke, és szerinte a hatóságok a Fidesz felszámolására törekednek. Ezt is rögzítjük.</p></div></div>
+<div class="card sit rv"><div class="ic">🧩</div><div><h3>Alkotmányos átalakítás</h3><p>A 17. alaptörvény-módosítás megszüntette az idősebb alkotmánybírák megbízatását. Polt Péter már nem az AB elnöke.</p></div></div>
+</div></section>
+
+<section id="ugyek"><h2 class="rv">Az ügyek <span id="cnt" style="color:var(--mu);font-size:18px"></span></h2><p class="sub rv">Minden kártya jelzi az aktuális állást. Aminek az állását nem ellenőriztük, az „ellenőrizendő”.</p>
+<div class="tools"><input id="q" placeholder="Keresés: név, ügy, kulcsszó…"><div id="chips" style="display:flex;gap:6px;flex-wrap:wrap"></div></div>
+<div class="grid g3" id="cases"></div>
+<div class="note" style="margin-top:16px">Jogerős ítélet nélkül a gyanúsítottakat megilleti az ártatlanság vélelme. A Fidesz szerint az eljárások politikai bosszúk. A bírósági döntéseket (köztük a felmentőket is) közöljük.</div>
+<h3 style="margin-top:34px">Súlyozás kategóriánként</h3><div class="card bars" id="bars"></div></section>
+
+<section id="gyermek"><h2 class="rv">Gyermekvédelmi hírfolyam</h2><p class="sub rv">A pedofidesz.eu legfrissebb anyagai (utolsó frissítés: 2026. 04. 24.), beépítve. A Szőlő utcai (Budapest) és az ózdi környéki gyermekotthon-ügy külön eljárás.</p>
+<div class="note">A külső forrás nélküli olvasói leveleket nem vettük át név szerinti állításként. A vádlottak a jogerős döntésig ártatlannak számítanak.</div>
+<div class="card feed" id="feed" style="margin-top:16px"></div></section>
+
+<section id="idovonal"><h2 class="rv">Idővonal</h2><p class="sub rv">Nagy fordulópontok.</p><div class="tl card" id="tl"></div></section>
+
+<section id="hirek"><h2 class="rv">Fityesz Hírportál</h2><p class="sub rv">Az egykori önálló hírportál beépítve.</p>
+<div class="grid g3"><div class="card rv"><img class="soc" src="https://static.fityesz.hu/images/assets/social-media/youtube-logo.png" alt=""><h3>YouTube</h3><p>Videóink.</p><a class="btn p" target="_blank" rel="noopener" href="https://www.youtube.com/@FityeszMozgalom">Megnyitás</a></div>
+<div class="card rv"><img class="soc" src="https://static.fityesz.hu/images/assets/social-media/facebook-logo.png" alt=""><h3>Facebook</h3><p>Posztjaink.</p><a class="btn p" target="_blank" rel="noopener" href="https://www.facebook.com/FityeszMozgalom">Megnyitás</a></div>
+<div class="card rv"><h3>📰 Régi hírportál</h3><p>Az önálló hírfolyam továbbra is elérhető.</p><a class="btn p" target="_blank" rel="noopener" href="https://hirportal.fityesz.hu">Megnyitás</a></div></div></section>
+
+<section id="archivum"><h2 class="rv">Archívum</h2><p class="sub rv">Az összes korábbi fityesz.hu verzió, a kampány PDF-je és az archivált oldalak.</p>
+<div class="grid g3">
+<div class="card rv"><h3>🗂️ Korábbi verziók</h3><p style="color:var(--mu);margin:0">Minden régi Fityesz-oldal egy kattintásra.</p>
+<div class="arch">
+<a class="btn p" target="_blank" rel="noopener" href="https://fityesz.hu">Jelenlegi (2.3.1) – TISZA-győzelmes</a>
+<a class="btn" target="_blank" rel="noopener" href="https://fityesz.hu/archive-latest">Legújabb – Választások előtti</a>
+<a class="btn" target="_blank" rel="noopener" href="https://fityesz.hu/archive-1.0">1.0 – UI-redesign előtti</a>
+<a class="btn" target="_blank" rel="noopener" href="https://fityesz.hu/archive-0.1.0">0.1.0 – Legrégebbi Fityesz-verzió</a>
+<a class="btn" target="_blank" rel="noopener" href="https://fityesz.hu/archive">Teljes régi archívum-oldal</a>
+</div></div>
+<div class="card rv"><h3>📄 PDF-plakátok</h3><p style="color:var(--mu);margin:0">„Fityesz: VÉGE VAN ELVTÁRSAK. (A VISSZAESÉS)” – kollekció a 2026. április 12-i napig tartó plakátolási kampány emlékére. Bárki kinyomtathatja, 7 oldal. A módosítási és hivatalos közzétételi jogokat a Fityesz Mozgalom képviseli.</p>
+<div class="arch"><a class="btn p" target="_blank" rel="noopener" href="https://static.fityesz.hu/pdfs/fityesz-vve.pdf">PDF megnyitása</a></div></div>
+<div class="card rv"><h3>🌐 Archivált oldalak</h3><p style="color:var(--mu);margin:0">TISZA Párt – biztosvalasztas.hu. Nem mi készítettük, megszűnése előtt archiváltuk és publikáltuk, a belső kódot működésre optimalizáltuk. Tartalma változatlan.</p>
+<div class="arch"><a class="btn p" target="_blank" rel="noopener" href="https://biztosvalasztas.fityesz.hu">biztosvalasztas.hu archívum</a></div></div>
+</div>
+<div class="tools" style="margin-top:20px"><button id="share">🔗 Link másolása</button></div></section>
+</main>
+<footer><img class="flogo" src="https://static.fityesz.hu/images/assets/fityesz-mozgalom.png" alt="Fityesz Mozgalom Logó"><br>
+Pártoktól és külső támogatástól független hobbiprojekt, kizárólag magánvéleményt tükröz. Fejlesztőiként az Orbán-rendszer teljes lezárását támogatjuk.<br>Kapcsolat: hivatalosfityesz.hu · <a href="https://fityesz.hu/archive" target="_blank" rel="noopener">Archívum</a> · V3 BÉTA</footer>
+<div id="toast"></div>
+<script>
+const C=[
+{c:"Korrupció",s:"KRITIKUS",t:"Seszták-ügy: elásott milliárdok",d:"A NVVH több mint 6 milliárd forintnyi készpénzt foglalt le a volt fejlesztési miniszter, Seszták Miklós büntetőügyében.",st:"Seszták letartóztatásban. A kormányfő a Fidesz–KDNP képviselőinek bocsánatkérését követelte. Fidesz: bíróságra tartozik.",f:"Portfolio, Pénzcentrum"},
+{c:"Korrupció",s:"KRITIKUS",t:"MNB-ügy: 650 milliárdos közvagyon",d:"Matolcsy vezetésével a jegybank közvagyont terelt alapítványokba és magántőkealapokba.",st:"Matolcsyt 2026.10.21-én őrizetbe vették, egy hónapra letartóztatták. A jegybank átvette a magántőkealapok kezelését (176 Mrd Ft).",f:"Fővárosi Törvényszék, Válasz Online"},
+{c:"Korrupció",s:"KRITIKUS",t:"NKA-botrány: Hankó-féle osztogatás",d:"Fideszes szervezetek kaptak kulturális támogatást, tiltott kampányfinanszírozás gyanúja.",st:"Hankó Balázs és Varga-Bajusz Veronika letartóztatásban. A HVG újabb 1,2 Mrd Ft-ot azonosított.",f:"Hang, HVG"},
+{c:"Korrupció",s:"KRITIKUS",t:"Mészáros Lőrinc: gázszerelőből milliárdos",d:"A vagyon 2015-ben kb. 8 Mrd, 2025-re 1422 Mrd Ft, miközben a GDP-növekedés 0,1% volt.",st:"Vagyonvisszaszerzési eljárások: ellenőrizendő.",f:"Átlátszó"},
+{c:"Korrupció",s:"KRITIKUS",t:"Tiborcz István: Elios",d:"Az OLAF 35 közvilágítási projektből mindegyikben szabálytalanságot, 17-ben szervezett csalást talált. 43,7 M euró visszafizetését javasolta.",st:"A Válasz Online szerint egy ~100 Mrd Ft értékű belgrádi ingatlanvagyont kimenekített.",f:"OLAF, Válasz Online"},
+{c:"Korrupció",s:"SÚLYOS",t:"Rogán-kör és az Orbán-posztok",d:"Pénzmosás gyanúja miatt függesztettek fel átutalásokat. Hűtlen kezelés gyanúval nyomoznak Orbán 4 milliárdos kommunikációs költései ügyében.",st:"Rogánt december 17-én hallgatja meg a végrehajtási bizottság.",f:"444, K-Monitor"},
+{c:"Korrupció",s:"SÚLYOS",t:"Lombkorona-sétányok",d:"60 milliós uniós sétány miatt vágták ki az erdőt Nyírmártonfalván, máshol 8 milliárdosat terveztek.",st:"Integritás Hatóság: rendszerszintű szabálytalanság.",f:"Integritás Hatóság"},
+{c:"Jogállamiság",s:"KRITIKUS",t:"Völner–Schadl-ügy",d:"Hét végrehajtó 924 millió forintot fizetett Schadl Györgynek, Völner Pál legalább 83 milliót kapott kinevezésekért.",st:"Az új bizottság december 16-án hallgatja meg Schadlt és Völnert.",f:"444"},
+{c:"Jogállamiság",s:"SÚLYOS",t:"Polt Péter és a politikai ügyészség",d:"Az ügyészség a kormányközeliekkel szemben szelektíven járt el.",st:"Polt 2025-ben lemondott, AB-elnök lett, a megbízatása megszűnt. Az EJEB-hez fordult. Új legfőbb ügyész: Fejes Péter.",f:"HVG, 10perc"},
+{c:"Jogállamiság",s:"SÚLYOS",t:"Tuzson Bence",d:"A volt igazságügyi miniszter a Szőlő utcai ügyet kisebbítette.",st:"Már nem miniszter. Az AB érdemi vizsgálat nélkül elutasította egy indítványát.",f:"Hírstart"},
+{c:"Jogállamiság",s:"SÚLYOS",t:"Pegasus-kémszoftver",d:"Újságírók, aktivisták és ellenzékiek telefonján izraeli kémszoftver futott.",st:"Eljárási állás: ellenőrizendő.",f:"HVG"},
+{c:"Jogállamiság",s:"SÚLYOS",t:"Elszámoltatás-hazugság: Gyurcsány Ferenc",d:"Orbán 2010-ben elszámoltatást ígért. Gyurcsány ellen nem született jogerős ítélet.",st:"FRISSÍTVE: Gyurcsány 2025 májusában visszavonult, nem közszereplő és nem képviselő. A DK élén Dobrev Klára áll.",f:"HVG"},
+{c:"Gyermekvédelem",s:"KRITIKUS",t:"Kegyelmi ügy: Novák Katalin és Kónya Endre",d:"Novák 2023-ban kegyelmet adott a bicskei gyermekotthon igazgatóhelyettesének, aki az igazgató bántalmazásainak eltussolásában segített. Varga Judit ellenjegyezte.",st:"Novák és Varga 2024-ben lemondott. A vizsgálóbizottság beidézi őket. Orbán meghallgatását elvetették 2026.10.9-én.",f:"444, HVG"},
+{c:"Gyermekvédelem",s:"KRITIKUS",t:"Szőlő utcai javítóintézet",d:"Juhász Péter Pál ellen 15 azonosított kiskorú sértett, szexuális visszaélés, gyermekprostitúció, szexuális erőszak gyanúja. Az intézetet 2026 januárjában bezárták.",st:"Eljárás folyamatban. Bangó Sándor koronatanú szerint „Zsolti bácsi” nevű, politikusnak mondott személy is jelen volt. A nyomozók szerint nincs értékelhető bizonyíték létezésére. Folytatás: ellenőrizendő.",f:"Pedofidesz Tracker, Kontroll"},
+{c:"Gyermekvédelem",s:"SÚLYOS",t:"Ózd környéki gyermekotthonok („Zsolti bácsi”)",d:"Gyerekek egy fekete autós, magas rangú politikusról beszéltek. Semjén Zsolt 2025.09.23-án tagadta az érintettségét.",st:"Ózd környékén két gyanúsított letartóztatva, nem közszereplők. Önálló ügy a Szőlő utcaitól.",f:"Pedofidesz Tracker"},
+{c:"Gyermekvédelem",s:"SÚLYOS",t:"Kaleta Gábor: gyermekpornó-ügy",d:"A perui nagykövet 19 ezer gyermekpornográf képet tárolt. Beismerte, egy év felfüggesztettet kapott.",st:"Új eljárás: nem találtam.",f:"Fityesz 2.3.1"},
+{c:"Gyermekvédelem",s:"KÖZEPES",t:"Volt XVII. ker. alpolgármester",d:"A vád szerint 15 éve 16 éves nevelt lányáról készített felvételeket, 97 fájl.",st:"FRISSÍTVE: 2026 januárjában első fokon felmentették, mert nem volt kétséget kizáró bizonyíték arra, hogy ő készítette. A kameraállás tény volt.",f:"Pedofidesz Tracker"},
+{c:"Gyermekvédelem",s:"KÖZEPES",t:"Hatházi Róbert kecskeméti plébános",d:"2024-ben pedofília gyanúval felfüggesztették, közel állt a Fideszhez. Az óvodájában 2026 januárjában egy óvodavezető bántalmazott egy négyéves lányt, a két eset különbözik.",st:"Eljárás: ellenőrizendő.",f:"Pedofidesz Tracker"},
+{c:"Erkölcs",s:"KÖZEPES",t:"Szájer József és Borkai Zsolt",d:"Szájer 2020-ban szexpartiról próbált elszökni Brüsszelben. Borkai 2018-ban jachtbuliban vett részt, a vezetés előre tudott a videóról.",st:"Szájer lemondott. Borkai kilépett a Fideszből.",f:"Fityesz 2.3.1"},
+{c:"Egészségügy",s:"SÚLYOS",t:"48 ezer Covid-halott és az ellátás romlása",d:"Az EU-ban az elhunytak aránya a legrosszabbak között. Az egészségügyi kiadás 4,4% GDP, az EU átlaga 7 felett. 14 ezer ápoló hiányzik.",st:"Átvilágítás: ellenőrizendő.",f:"KSH, PDSZ"},
+{c:"Média",s:"SÚLYOS",t:"KESMA és közmédia",d:"Évi 140 Mrd Ft feletti közpénz a kormánypárti médiára.",st:"Átalakítás: ellenőrizendő.",f:"HVG"},
+{c:"Külpolitika",s:"KRITIKUS",t:"Putyin-barát vétók és Paks II",d:"Uniós szankciók blokkolása, 12,5 Mrd eurós orosz hitelből épülő Paks II, kínai hitelből a Budapest–Belgrád vasút.",st:"Az új kormány lépései: ellenőrizendő.",f:"Fityesz 2.3.1"},
+{c:"Gazdaság",s:"SÚLYOS",t:"Magánnyugdíjak és KATA",d:"2010-ben 3000 Mrd Ft magánmegtakarítást vett át az állam. 2022-ben eltörölték a KATA-t, 300–400 ezer embert érintve.",st:"Kártalanítás: ellenőrizendő.",f:"Fityesz 2.3.1"},
+{c:"Infrastruktúra",s:"KÖZEPES",t:"MÁV és gödi Samsung",d:"A MÁV 2024-ben 6,9 évnyi összkárt halmozott fel. A kormány tudott a gödi légszennyezésről.",st:"Ellenőrizendő.",f:"Fityesz 2.3.1"}
+];
+const FEED=[
+["2026.04.24","Koronatanú a Kontrollnak: Bangó Sándor Juhász Péter Pálról és „Zsolti bácsiról” is vallott","Bangó állítása szerint Juhász szexuálisan visszaélt vele, és egy alkalommal „Zsolti bácsi” is jelen volt, akit politikusnak mondott. A Kontroll nem közli a nevet.","Szőlő utca"],
+["2026.02.19","Új szál: kamaszként férjhez mentek Juhász „pártfogoltjai”","Az ügyészségi iratok szerint kiskorú lányok házasodtak, így nagykorúvá váltak. A gyámhivatal jóváhagyta, a lányok eltűntek a gyermekvédelmi rendszerből.","Szőlő utca"],
+["2026.02.16","Ugyanabban az óvodában: bántalmazás és egy korábban felfüggesztett lelkész","A kecskeméti óvodában az óvodavezető bántalmazott egy négyéves lányt. Hatházi Róbertet 2024-ben pedofília gyanúval felfüggesztették.","Hatházi-ügy"],
+["2026.01.23","68-an távoztak egyszerre a 70 fős javítóintézetből","Extrém fluktuáció a Szőlő utcában. Egy nevelőnőt bűnpártolással gyanúsítottak.","Szőlő utca"],
+["2026.01.21","Második megbízott igazgatót is visszavonták","Kovács-Buna Károlyt 2025.12.17-én hívták vissza újabb bántalmazási videók miatt.","Szőlő utca"],
+["2026.01.19","Bezárták a Szőlő utcai javítóintézetet","Kormányrendelet: kb. 60 fiatalkorút áthelyeztek, kb. 60 dolgozó állás nélkül maradt.","Szőlő utca"],
+["2026.01.19","Felmentették a volt XVII. kerületi alpolgármestert","Első fokon felmentő ítélet: nem volt kétséget kizáró bizonyíték, hogy ő készítette a felvételeket (97 fájl).","Alpolgármester-ügy"],
+["2026.01.13","Tizenöt kiskorú sértett, új gyanúsítások","A legfőbb ügyész helyettese szerint „Zsolti bácsi” létezésére és ügyféllistákra nincs értékelhető bizonyíték, ezeket tovább vizsgálják.","Szőlő utca"],
+["2026.01.12","2022-es levél: az államot évekkel ezelőtt tájékoztatták","Már 2022-ben jeleztek az állam felé bántalmazásokról.","Szőlő utca"],
+["2025.12.09","Brutális videófelvétel: több nevelő őrizetbe","Kilincsezéses verés a videón. A megbízott igazgató lemondott.","Szőlő utca"],
+["2025.11.11","14 év érinthetetlenség: újabb gyanúsítások","Hűtlen kezelés és hamis okirat gyanúja Juhász Péter Pál ellen.","Szőlő utca"],
+["2025.10.17","Nyomozás zajlik Ózd környékén","Nagy Gábor Bálint legfőbb ügyész megerősítette. Két letartóztatott gyanúsított nem közszereplő.","Ózd-ügy"],
+["2025.09.23","Semjén Zsolt tagad","A parlamentben azt mondta, soha nem járt ilyen helyen. Az ózdi és a budapesti ügyet gyakran összekeverik.","Ózd-ügy"],
+["2025.09.19","Juhász Péter podcaster feltárja az ózdi ügyet","Gyerekek egy „Zsolti bácsiról” meséltek, aki fekete autóval járt.","Ózd-ügy"],
+["2025.06.17","A Fidesz leszavazta a gyermekvédelmi javaslatot","A frakció elutasította Magyar Péter EP-képviselő törvényjavaslatát.","Szőlő utca"],
+["2024.02.10","Novák Katalin lemond","Hibát ismert el, Varga Judit is visszavonult.","Kegyelmi ügy"],
+["2024.02.08","Orbán alkotmánymódosítást jelent be","Pedofilügyekben nem lehet kegyelmet adni.","Kegyelmi ügy"],
+["2024.02.02","A 444 kirobbantja a kegyelmi botrányt","A Kúria végzéséből derült ki Kónya Endre kegyelme.","Kegyelmi ügy"],
+["2023.04.27","Novák kegyelmet ad Kónya Endrének","A pápa látogatása ürügyén. Összesen 22 kegyelmi döntés volt aznap.","Kegyelmi ügy"]
+];
+const TL=[["2023.04.27","Novák Katalin kegyelmet ad Kónya Endrének."],["2024.02.10","Novák Katalin lemond."],["2025.05","Polt Péter lemond legfőbb ügyészként. Gyurcsány Ferenc visszavonul."],["2025.12","Szőlő utcai intézet: brutális videók, őrizetbe vételek."],["2026.01","A Szőlő utcai javítóintézetet bezárják."],["2026.04.12","Tisza-kétharmad, a Fidesz ellenzékbe kerül."],["2026.07","17. alaptörvény-módosítás."],["2026.10","Matolcsy őrizetben, Hankó letartóztatásban."],["2026.11","Seszták-ügy: elásott milliárdok."],["2026.12","Várható: Schadl, Völner és Rogán meghallgatása."]];
+const $=s=>document.querySelector(s);let cur="Mind";const cats=["Mind",...new Set(C.map(x=>x.c))];
+function render(){const q=$('#q').value.toLowerCase();const l=C.filter(x=>(cur=="Mind"||x.c==cur)&&(x.t+x.d+x.st).toLowerCase().includes(q));
+$('#cnt').textContent="("+l.length+"/"+C.length+")";
+$('#cases').innerHTML=l.map(x=>`<article class="card case ${x.s}"><span class="tag">${x.c}</span><span class="tag">${x.s}</span><h3>${x.t}</h3><p>${x.d}</p><div class="st"><b>Állás:</b> ${x.st}</div><div class="fsz">Forrás: ${x.f}</div></article>`).join("")||"<p>Nincs találat.</p>"}
+$('#chips').innerHTML=cats.map(c=>`<button class="chip ${c==cur?'on':''}" data-c="${c}">${c}</button>`).join("");
+$('#chips').onclick=e=>{if(e.target.dataset.c){cur=e.target.dataset.c;document.querySelectorAll('.chip').forEach(b=>b.classList.toggle('on',b.dataset.c==cur));render()}};
+$('#q').oninput=render;render();
+$('#feed').innerHTML=FEED.map(f=>`<div class="it"><time>${f[0]}</time><div><h4>${f[1]}</h4><p>${f[2]}</p><span class="rel">Kapcsolódó: ${f[3]}</span></div></div>`).join("");
+$('#tl').innerHTML=TL.map(t=>`<div class="it rv"><time>${t[0]}</time><div>${t[1]}</div></div>`).join("");
+const w={KRITIKUS:3,SÚLYOS:2,KÖZEPES:1},ag={};C.forEach(x=>ag[x.c]=(ag[x.c]||0)+w[x.s]);const mx=Math.max(...Object.values(ag));
+$('#bars').innerHTML=Object.entries(ag).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="row"><div class="lab">${k}</div><div class="tr"><div class="bar" data-w="${v/mx*100}"></div></div><b>${(v/mx*10).toFixed(1)}</b></div>`).join("");
+const S=[[64,"","feljelentés a kormányváltás óta"],[4000,"+ Mrd Ft","feljelentésekkel érintett közpénz"],[24,"","ügyben indult nyomozás"],[6,"+ Mrd Ft","elásott készpénz (Seszták-ügy)"],[650,"Mrd Ft","MNB-alapítványokba terelt vagyon"],[C.length,"","nyilvántartott ügy"]];
+$('#stats').innerHTML=S.map(s=>`<div class="card stat rv"><b data-n="${s[0]}" data-u="${s[1]}">0</b><span>${s[2]}</span></div>`).join("");
+const tk=C.map(x=>"<span>● "+x.t+"</span>").join("");$('#tk').innerHTML=tk+tk;
+const T=["A Fityesz egy bukott rendszer gúnyneve.","A Fityesz a haverok milliárdjainak kora.","A Fityesz az a rendszer, aminek mennie kellett."];let ti=0,ci=0,del=false;
+(function ty(){const s=T[ti];ci+=del?-1:1;$('#typ').textContent=s.slice(0,ci);let d=del?25:60;if(!del&&ci==s.length){del=true;d=1800}else if(del&&ci==0){del=false;ti=(ti+1)%T.length;d=300}setTimeout(ty,d)})();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');const n=e.target.querySelector('[data-n]');if(n&&!n.done){n.done=1;const t=+n.dataset.n,st=performance.now();(function f(now){const p=Math.min(1,(now-st)/1400);n.textContent=Math.round(t*(1-Math.pow(1-p,3))).toLocaleString('hu')+(n.dataset.u?" "+n.dataset.u:"");if(p<1)requestAnimationFrame(f)})(st)}if(e.target.id=='bars')e.target.querySelectorAll('.bar').forEach(b=>b.style.width=b.dataset.w+'%')}}),{threshold:.15});
+document.querySelectorAll('.rv,#bars').forEach(e=>io.observe(e));
+addEventListener('scroll',()=>{const h=document.documentElement;$('#prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';let id="";document.querySelectorAll('section[id]').forEach(s=>{if(s.getBoundingClientRect().top<150)id=s.id});document.querySelectorAll('nav a.l').forEach(a=>a.classList.toggle('on',a.getAttribute('href')=='#'+id))});
+function toast(m){const t=$('#toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',2200)}
+$('#tg').onclick=()=>{const h=document.documentElement;h.dataset.theme=h.dataset.theme=='dark'?'light':'dark'};
+$('#share').onclick=()=>navigator.clipboard.writeText(location.href).then(()=>toast("Link kimásolva"));
+</script></body></html>
